@@ -1,0 +1,17 @@
+networks: {}
+services:
+  web:
+    image: portainer/portainer
+    ports:
+    - 9000:9000
+    privileged: true
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock:rw
+    - data:/data:rw
+version: '2.0'
+volumes:
+  data: {}
+networks:
+  default:
+    external:
+      name: services
