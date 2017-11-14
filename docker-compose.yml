@@ -3,7 +3,7 @@ services:
   web:
     image: portainer/portainer
     environment:
-      VIRTUAL_HOST: 'portainer.dev'
+      VIRTUAL_HOST: 'portainer.127.0.0.1.xip.io'
       VIRTUAL_PORT: '9000'
     privileged: true
     volumes:
