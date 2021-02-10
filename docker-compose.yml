@@ -1,17 +1,14 @@
-networks: {}
 services:
   web:
     image: portainer/portainer
     environment:
-      VIRTUAL_HOST: 'portainer.127.0.0.1.xip.io'
+      VIRTUAL_HOST: portainer.127.0.0.1.xip.io
       VIRTUAL_PORT: '9000'
     privileged: true
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock:rw
-    - data:/data:rw
+    - ./data:/data:rw
 version: '3.0'
-volumes:
-  data: {}
 networks:
   default:
     external:
